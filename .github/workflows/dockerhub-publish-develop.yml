@@ -30,9 +30,10 @@ jobs:
 
       - name: Push exact version
         run: |
+          set -e
           cd projector-docker
           ./build-container.sh ${{ matrix.imageName}}:${{ matrix.tag }} ${{ matrix.downloadLink }}
-          docker save ${{ matrix.imageName}}:${{ matrix.tag }} | gzip > ${{ matrix.imageName}}-${{ matrix.tag }}-${{ github.run_number }}.tar.gz
+          docker save ${{ matrix.imageName}}:${{ matrix.tag }} | gzip > ../${{ matrix.imageName}}-${{ matrix.tag }}-${{ github.run_number }}.tar.gz
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
