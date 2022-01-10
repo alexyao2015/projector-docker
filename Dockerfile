@@ -155,6 +155,7 @@ RUN mv $PROJECTOR_DIR/ide-projector-launcher.sh $PROJECTOR_DIR/ide/bin
 RUN chmod 644 $PROJECTOR_DIR/ide/projector-server/lib/*
 
 FROM debian:bullseye
+ENV PATH /usr/local/bin:$PATH
 
 RUN true \
 # Any command which returns non-zero exit code will cause this shell script to exit immediately:
