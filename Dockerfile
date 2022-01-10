@@ -202,6 +202,7 @@ RUN true \
     && set -e \
 # Activate debugging to show execution details: all commands will be printed before execution
     && set -x \
+    && ldconfig \
 # move run scipt:
     && mv $PROJECTOR_DIR/run.sh run.sh \
 # change user to non-root (http://pjdietz.com/2016/08/28/nginx-in-docker-without-root.html):
